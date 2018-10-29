@@ -132,7 +132,7 @@ func WeChatWebCallback(w http.ResponseWriter, r *http.Request) (*common.WeChatPa
 		signData = append(signData, fmt.Sprintf("%v=%v", k, v))
 	}
 
-	key := client.DefaultWechatAppClient().Key
+	key := client.DefaultWechatWebClient().Key
 
 	mySign, err := client.WechatGenSign(key, m)
 	if err != nil {
